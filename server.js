@@ -17,4 +17,4 @@ db.syncAndSeed().then(() => {
   app.listen(port, () => console.log(`listening on port ${port}`));
 });
 
-// app.listen(port, () => console.log(`listening on port ${port}`));
+module.exports = app;
