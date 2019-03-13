@@ -10,15 +10,18 @@ export default class Users extends React.Component {
     };
   }
   async componentDidMount() {
-    try {
-      const response = await axios.get('/users/');
-      this.setState({ users: response });
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await axios.get('/users');
+    console.log(response.data);
+    this.setState({ users: response.data });
   }
   render() {
     const users = this.state.users;
-    return <div id="users">{users[0]}</div>;
+    return (
+      <ul id="users">
+        {users.map(user => {
+          return <li key={user.id}>{user.name}</li>;
+        })}
+      </ul>
+    );
   }
 }

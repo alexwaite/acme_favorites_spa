@@ -12,7 +12,7 @@ export default class App extends React.Component {
           <h1>Acme Favorites</h1>
           <Nav />
 
-          <Route exact path="/users/" component={Users} />
+          <Route path="/users" component={Users} />
         </div>
       </HashRouter>
     );
