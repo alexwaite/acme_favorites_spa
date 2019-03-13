@@ -10,7 +10,6 @@ export default class Users extends React.Component {
   }
   async componentDidMount() {
     const response = await axios.get('/users');
-    console.log(response.data);
     this.setState({ users: response.data });
   }
   render() {

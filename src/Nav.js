@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Nav = props => {
+const Nav = () => {
   return (
     <ul className="nav nav-pills">
       <li className="nav-item">

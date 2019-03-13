@@ -10,7 +10,6 @@ export default class Things extends React.Component {
   }
   async componentDidMount() {
     const response = await axios.get('/things');
-    console.log(response.data);
     this.setState({ things: response.data });
   }
   render() {

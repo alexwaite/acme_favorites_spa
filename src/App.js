@@ -11,7 +11,6 @@ export default class App extends React.Component {
         <div>
           <h1>Acme Favorites</h1>
           <Nav />
-
           <Route path="/users" component={Users} />
           <Route path="/things" component={Things} />
         </div>
