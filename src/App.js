@@ -13,6 +13,7 @@ export default class App extends React.Component {
           <Nav />
 
           <Route path="/users" component={Users} />
+          <Route path="/things" component={Things} />
         </div>
       </HashRouter>
     );

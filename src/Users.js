@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class Users extends React.Component {
@@ -19,7 +18,20 @@ export default class Users extends React.Component {
     return (
       <ul id="users">
         {users.map(user => {
-          return <li key={user.id}>{user.name}</li>;
+          return (
+            <li key={user.id}>
+              {user.name}
+              <ul>
+                {user.favorites.map(favorite => {
+                  return (
+                    <li key={favorite.thing.id}>
+                      {favorite.thing.name} (Ranked: {favorite.rank})
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          );
         })}
       </ul>
     );

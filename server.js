@@ -29,6 +29,7 @@ app.get('/users', (req, res, next) => {
     include: [
       {
         model: Favorite,
+        include: [{ model: Thing }],
       },
     ],
   })
@@ -36,7 +37,21 @@ app.get('/users', (req, res, next) => {
       res.json(users);
     })
     .catch(error => console.error(error));
-  // .next();
+});
+
+app.get('/things', (req, res, next) => {
+  Thing.findAll({
+    include: [
+      {
+        model: Favorite,
+        include: [{ model: User }],
+      },
+    ],
+  })
+    .then(things => {
+      res.json(things);
+    })
+    .catch(error => console.error(error));
 });
 
 module.exports = app;

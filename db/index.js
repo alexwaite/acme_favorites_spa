@@ -7,6 +7,8 @@ const Favorite = require('./Favorite');
 Favorite.belongsTo(User);
 User.hasMany(Favorite);
 Favorite.belongsTo(Thing);
+Thing.hasMany(Favorite);
+// Thing.belongsToMany(User, { through: Favorite });
 
 const usernames = ['moe', 'larry', 'curly', 'shep'];
 const things = ['foo', 'bar', 'bazz', 'quq', 'quip'];
