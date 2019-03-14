@@ -2,10 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
-  function isActive() {
-    return location.href.includes('/users');
-  }
-
   return (
     <ul className="nav nav-pills">
       <li className="nav-item">
